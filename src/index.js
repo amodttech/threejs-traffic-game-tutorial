@@ -45,6 +45,37 @@ const renderer = new THREE.WebGL1Renderer({antialias: true})
 renderer.setSize(window.innerWidth, window.innerHeight)
 renderer.render(scene, camera)
 
+/// Assets
+function Car() {
+  const car = new THREE.Group()
+
+  const backWheel = new THREE.Mesh(
+    new THREE.BoxBufferGeometry(12,33,12), // 
+    new THREE.MeshLambertMaterial({color: 0x333333})
+  )
+  backWheel.position.z = 6 //  it's center height is equal to half its whole height, so it will render resting on the ground
+  backWheel.position.x = -10 // moves the object to  the rear of the car
+  car.add(backWheel)
+
+  const frontWheel = new THREE.Mesh(
+    new THREE.BoxBufferGeometry(12,33,12), // 
+    new THREE.MeshLambertMaterial({color: 0x333333})
+  )
+  frontWheel.position.z = 6
+  frontWheel.position.x = 10 //moves object equilvalent distance to the fron of the car
+  car.add(frontWheel)
+
+
+
+
+
+
+
+
+  return car
+}
+
+
 
 
 
